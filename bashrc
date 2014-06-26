@@ -65,3 +65,6 @@ fi
 if [ -f ~/.bash_private ]; then
     . ~/.bash_private
 fi
+
+# path
+export PATH=~/local/bin:$PATH
