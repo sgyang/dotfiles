@@ -4,6 +4,7 @@
 
 [core]
     editor = emacs -q
+    excludesfile = ~/.gitignore
 
 [color]
     ui = auto
