@@ -43,13 +43,16 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -l'
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# tmux
 alias ta='tmux a -t'
 alias tn='tmux new -s'
 alias tls='tmux ls'
 
+# less
 export LESS='FRSX'
 
-# for emacs
+# emacs
 export EDITOR='emacs'
 alias emacs='emacs -nw'
 alias emacsl='emacs -q -l ~/.emacs.d/conf/00-general.el'
@@ -67,4 +70,4 @@ if [ -f ~/.bash_private ]; then
 fi
 
 # path
-export PATH=~/local/bin:$PATH
+export PATH=~/.local/bin:$PATH
