@@ -13,7 +13,9 @@
     st = status -sb
     ci = commit
     co = checkout
-    glog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --graph --branches
+    ft = fetch
+    rb = rebase
+    glog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --graph --branches --remotes
 
 [push]
     default = matching
