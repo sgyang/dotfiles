@@ -39,6 +39,7 @@ if [ -x /usr/bin/dircolors ]; then
     alias fgrep='fgrep --color=auto'
     alias egrep='egrep --color=auto'
 fi
+alias ls='ls --color --group-directories-first'
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -l'
@@ -49,25 +50,34 @@ alias ta='tmux a -t'
 alias tn='tmux new -s'
 alias tls='tmux ls'
 
-# less
-export LESS='FRSX'
+# Common environment variables
+export PATH=$HOME/bin:$PATH
+export LANG="en_US.UTF-8"
+export LC_ALL="en_US.UTF-8"
+export LESS="FRSX"
+export EDITOR="emacs"
 
-# emacs
-export EDITOR='emacs'
-alias emacs='emacs -nw'
-alias emacsl='emacs -q -l ~/.emacs.d/conf/00-general.el'
-alias ec='emacsclient -t'
-alias kill-emacs='emacsclient -e "(kill-emacs)"'
+# Common aliases
+alias ls='ls --color --group-directories-first'
 
-# completion
+# Go
+export GOPATH=$HOME/go
+export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
+
+# Java
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+
+# Docker
+alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
+alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"
+alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
+
+# Completion
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# private setting file
-if [ -f ~/.bash_private ]; then
-    . ~/.bash_private
+# Local settings
+if [ -f ~/.bashrc_private ]; then
+    . ~/.bashrc_private
 fi
-
-# path
-export PATH=~/.local/bin:$PATH

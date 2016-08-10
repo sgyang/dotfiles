@@ -1,3 +1,6 @@
+[include]
+    path = .gitconfig.local
+
 [user]
     name = Seonggi Yang
     email = seonggi.yang@gmail.com
@@ -15,6 +18,7 @@
     co = checkout
     ft = fetch
     rb = rebase
+    rbh = rebase HEAD
     glog = log --pretty=format:\"%C(red)%h%Creset %C(cyan)<%an>%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset\" --graph --branches --remotes
 
 [push]
