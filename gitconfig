@@ -6,7 +6,7 @@
     email = seonggi.yang@gmail.com
 
 [core]
-    editor = emacs -q
+    editor = nano
     excludesfile = ~/.gitignore
 
 [color]

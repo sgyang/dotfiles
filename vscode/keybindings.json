@@ -366,10 +366,30 @@
     // My bindings
     {
         "key": "ctrl+x k",
-        "command": "workbench.files.action.closeFile"
+        "command": "workbench.action.closeActiveEditor"
     },
     {
         "key": "ctrl+o",
         "command": "workbench.action.navigateEditorGroups"
+    },
+    {
+        "key": "alt+ctrl+[",
+        "command": "editor.foldAll"
+    },
+    {
+        "key": "alt+ctrl+]",
+        "command": "editor.unfoldAll"
+    },
+    {
+        "key": "alt+[",
+        "command": "editor.foldRecursively"
+    },
+    {
+        "key": "alt+]",
+        "command": "editor.unfoldRecursively"
+    },
+    {
+        "key": "alt+ctrl+o",
+        "command": "workbench.action.files.openFolder"
     }
 ]

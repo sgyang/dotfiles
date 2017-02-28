@@ -93,6 +93,8 @@ ZSH_THEME_COLOR_PWD="blue"
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+unsetopt autocd
+
 # Common environment variables
 export PATH=$HOME/bin:$PATH
 export LANG="en_US.UTF-8"
@@ -107,6 +109,16 @@ alias ls='ls --color --group-directories-first'
 # Go
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
+alias goget='go get -v ./...'
+alias goins='go install -v ./...'
+
+# Rust
+export PATH=$HOME/.cargo/bin:$PATH
+
+# Python
+if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
+    source /usr/local/bin/virtualenvwrapper.sh
+fi
 
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle
@@ -116,11 +128,47 @@ alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"
 alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
 
+# HBase
+export PATH=$HOME/local/hbase/bin:$PATH
+
 # Google Cloud
 if [[ -e $HOME/local/google-cloud-sdk ]]; then
     source $HOME/local/google-cloud-sdk/path.zsh.inc
     source $HOME/local/google-cloud-sdk/completion.zsh.inc
 fi
+
+# Kubernetes
+alias ku="kubectl"
+alias deploys="kubectl get deployments"
+alias pods="kubectl get pods"
+alias services="kubectl get services"
+
+function forward () {
+    name=$(kubectl get pods -o name | grep "^pod/$1" | head -1 | cut -b5-)
+    if [ -z "$name" ]; then
+        echo "not found $1" 1>&2
+        return 1
+    fi
+    echo $name 1>&2
+    shift
+    port=30000
+    if [ ! -z "$1" ]; then
+        port=$1
+        shift
+    fi
+    kubectl port-forward $name $port $@
+}
+
+function logs() {
+    name=$(kubectl get pods -o name | grep "^pod/$1" | head -1 | cut -b5-)
+    if [ -z "$name" ]; then
+        echo "not found $1" 1>&2
+        return 1
+    fi
+    echo $name 1>&2
+    shift
+    kubectl logs $name $@
+}
 
 # Local settings
 if [[ -e ~/.zshrc_private ]]; then
