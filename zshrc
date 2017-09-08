@@ -101,16 +101,18 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LESS="FRSX"
 export EDITOR="emacs"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 
 # Common aliases
 alias emacs='emacs -nw'
+alias ec='emacsclient'
 alias ls='ls --color --group-directories-first'
 
 # Go
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 alias goget='go get -v ./...'
-alias goins='go install -v ./...'
+alias goins='go install -v $(go list ./... | grep -v /vendor/)'
 
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH
@@ -128,7 +130,8 @@ alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"
 alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
 
-# HBase
+# Hadoop
+export PATH=$HOME/local/hadoop/bin:$PATH
 export PATH=$HOME/local/hbase/bin:$PATH
 
 # Google Cloud
@@ -144,7 +147,7 @@ alias pods="kubectl get pods"
 alias services="kubectl get services"
 
 function forward () {
-    name=$(kubectl get pods -o name | grep "^pod/$1" | head -1 | cut -b5-)
+    name=$(kubectl get pods -o name | grep "^pods/$1" | head -1 | cut -b6-)
     if [ -z "$name" ]; then
         echo "not found $1" 1>&2
         return 1
@@ -160,7 +163,7 @@ function forward () {
 }
 
 function logs() {
-    name=$(kubectl get pods -o name | grep "^pod/$1" | head -1 | cut -b5-)
+    name=$(kubectl get pods -o name | grep "^pods/$1" | head -1 | cut -b6-)
     if [ -z "$name" ]; then
         echo "not found $1" 1>&2
         return 1

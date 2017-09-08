@@ -3,16 +3,31 @@
     "files.trimTrailingWhitespace": true,
     "editor.fontSize": 12,
     "editor.tabSize": 4,
+    "editor.minimap.enabled": false,
     "workbench.editor.enablePreview": false,
+    "workbench.statusBar.visible": true,
+    "workbench.iconTheme": "vs-seti",
+    "workbench.activityBar.visible": false,
+    "window.menuBarVisibility": "toggle",
 
     "go.formatOnSave": true,
-    "go.lintOnSave": false,
+    "go.lintOnSave": "package",
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": false
+    },
+    "go.autocompleteUnimportedPackages": true,
+    "go.vetFlags": ["-printfuncs", "Debugf,Infof,Warnf,Errorf,Fatalf,Panicf"],
 
-    "python.pythonPath": "/home/syang/.virtualenvs/env/bin/python3",
+    "python.pythonPath": "${env.HOME}/.virtualenvs/env/bin/python3",
     "python.autoComplete.extraPaths": [
-        "/home/syang/.virtualenvs/env/lib/python3.4"
+        "${env.HOME}/.virtualenvs/env/lib/python3.4"
     ],
-    "python.linting.enabled": false,
-    "window.zoomLevel": 0,
-    "workbench.statusBar.visible": true
+
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.preview.markEditorSelection": false,
+    "markdown.preview.scrollPreviewWithEditorSelection": false,
+
+    "extensions.autoUpdate": true
 }

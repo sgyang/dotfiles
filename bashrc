@@ -59,6 +59,7 @@ export EDITOR="emacs"
 
 # Common aliases
 alias emacs='emacs -nw'
+alias ec='emacsclient'
 alias ls='ls --color --group-directories-first'
 
 # Go
