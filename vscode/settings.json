@@ -11,7 +11,7 @@
     "window.menuBarVisibility": "toggle",
 
     "go.formatOnSave": true,
-    "go.lintOnSave": "package",
+    "go.lintOnSave": "off",
     "go.enableCodeLens": {
         "references": false,
         "runtest": false
@@ -23,11 +23,13 @@
     "python.autoComplete.extraPaths": [
         "${env.HOME}/.virtualenvs/env/lib/python3.4"
     ],
+    "python.linting.enabled": false,
 
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.markEditorSelection": false,
     "markdown.preview.scrollPreviewWithEditorSelection": false,
 
-    "extensions.autoUpdate": true
+    "extensions.autoUpdate": true,
+    "workbench.startupEditor": "newUntitledFile"
 }

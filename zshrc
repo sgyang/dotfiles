@@ -140,6 +140,17 @@ if [[ -e $HOME/local/google-cloud-sdk ]]; then
     source $HOME/local/google-cloud-sdk/completion.zsh.inc
 fi
 
+# My usual protoc wrapper
+function protocw () {
+    set -x
+    protoc -I. \
+         -I$GOPATH/src \
+         -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/ \
+         --go_out=plugins=grpc:$GOPATH/src \
+         --grpc-gateway_out=. \
+         $@
+}
+
 # Kubernetes
 alias ku="kubectl"
 alias deploys="kubectl get deployments"
