@@ -1,7 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "files.trimTrailingWhitespace": true,
-    "editor.fontSize": 12,
+    "editor.fontSize": 14,
     "editor.tabSize": 4,
     "editor.minimap.enabled": false,
     "workbench.editor.enablePreview": false,
@@ -31,5 +31,14 @@
     "markdown.preview.scrollPreviewWithEditorSelection": false,
 
     "extensions.autoUpdate": true,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+
+    "[javascript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+    "python.linting.enabledWithoutWorkspace": false,
+    "explorer.confirmDragAndDrop": false,
+    "window.zoomLevel": 0,
+    "editor.fontFamily": "'Noto Sans Mono CJK JP Regular', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'"
 }

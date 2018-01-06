@@ -112,7 +112,7 @@ alias ls='ls --color --group-directories-first'
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 alias goget='go get -v ./...'
-alias goins='go install -v $(go list ./... | grep -v /vendor/)'
+alias goins='go install -v $(go list ./... 2> /dev/null | grep -v /vendor/ | grep -v /node_modules/)'
 
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH
@@ -130,12 +130,9 @@ alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"
 alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
 
-# Hadoop
-export PATH=$HOME/local/hadoop/bin:$PATH
-export PATH=$HOME/local/hbase/bin:$PATH
-
 # Google Cloud
 if [[ -e $HOME/local/google-cloud-sdk ]]; then
+    export CLOUDSDK_PYTHON=/usr/bin/python
     source $HOME/local/google-cloud-sdk/path.zsh.inc
     source $HOME/local/google-cloud-sdk/completion.zsh.inc
 fi
