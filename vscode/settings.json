@@ -28,7 +28,7 @@
 
     "python.pythonPath": "${env.HOME}/.virtualenvs/env/bin/python3",
     "python.autoComplete.extraPaths": [
-        "${env.HOME}/.virtualenvs/env/lib/python3.4"
+        "${env.HOME}/.virtualenvs/env/lib/python3.5"
     ],
     "python.linting.enabled": false,
     "python.linting.enabledWithoutWorkspace": false,
