@@ -1,5 +1,39 @@
 // Place your key bindings in this file to overwrite the defaults
 [
+    // My bindings
+    {
+        "key": "ctrl+x k",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+o",
+        "command": "workbench.action.navigateEditorGroups"
+    },
+    {
+        "key": "alt+ctrl+[",
+        "command": "editor.foldAll"
+    },
+    {
+        "key": "alt+ctrl+]",
+        "command": "editor.unfoldAll"
+    },
+    {
+        "key": "alt+[",
+        "command": "editor.foldRecursively"
+    },
+    {
+        "key": "alt+]",
+        "command": "editor.unfoldRecursively"
+    },
+    {
+        "key": "alt+ctrl+o",
+        "command": "workbench.action.files.openFolder"
+    },
+    {
+        "key": "ctrl+alt+n",
+        "command": "workbench.action.files.newUntitledFile"
+    },
+
     // Copy from https://github.com/nana4gonta/emacs-visual-studio-code
     {
         "key": "ctrl+x s",
@@ -341,39 +375,5 @@
         "key": "ctrl+x u",
         "command": "undo",
         "when": "editorTextFocus"
-    },
-
-    // My bindings
-    {
-        "key": "ctrl+x k",
-        "command": "workbench.action.closeActiveEditor"
-    },
-    {
-        "key": "ctrl+o",
-        "command": "workbench.action.navigateEditorGroups"
-    },
-    {
-        "key": "alt+ctrl+[",
-        "command": "editor.foldAll"
-    },
-    {
-        "key": "alt+ctrl+]",
-        "command": "editor.unfoldAll"
-    },
-    {
-        "key": "alt+[",
-        "command": "editor.foldRecursively"
-    },
-    {
-        "key": "alt+]",
-        "command": "editor.unfoldRecursively"
-    },
-    {
-        "key": "alt+ctrl+o",
-        "command": "workbench.action.files.openFolder"
-    },
-    {
-        "key": "ctrl+alt+n",
-        "command": "workbench.action.files.newUntitledFile"
     }
 ]

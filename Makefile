@@ -8,6 +8,9 @@ all: dotfiles scripts vscode
 .PHONY: dotfiles
 dotfiles: $(foreach f, $(DOTFILES), install-dotfile-$(f))
 
+.PHONY: scripts
+scripts: $(foreach f, $(SCRIPTS), install-dotfile-$(f))
+
 .PHONY: vscode
 vscode:
 	cd ./vscode; make

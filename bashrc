@@ -14,9 +14,9 @@ esac
 force_color_prompt=yes
 if [ -n "$force_color_prompt" ]; then
     if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-	color_prompt=yes
+        color_prompt=yes
     else
-	color_prompt=
+        color_prompt=
     fi
 fi
 if [ "$color_prompt" = yes ]; then
@@ -56,6 +56,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LESS="FRSX"
 export EDITOR="emacs"
+export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
 
 # Common aliases
 alias emacs='emacs -nw'
@@ -66,7 +67,7 @@ alias ls='ls --color --group-directories-first'
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 alias goget='go get -v ./...'
-alias goins='go install -v ./...'
+alias goins='go install -v $(go list ./... 2> /dev/null | grep -v /vendor/ | grep -v /node_modules/)'
 
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH
@@ -84,14 +85,23 @@ alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"
 alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
 
-# HBase
-export PATH=/usr/local/hbase/bin:$PATH
-
 # Google Cloud
 if [[ -e $HOME/local/google-cloud-sdk ]]; then
+    export CLOUDSDK_PYTHON=/usr/bin/python
     source $HOME/local/google-cloud-sdk/path.zsh.inc
     source $HOME/local/google-cloud-sdk/completion.zsh.inc
 fi
+
+# Protobuf
+function protocw () {
+    set -x
+    protoc -I. \
+         -I$GOPATH/src \
+         -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/ \
+         --go_out=plugins=grpc:$GOPATH/src \
+         --grpc-gateway_out=. \
+         $@
+}
 
 # Kubernetes
 alias ku="kubectl"
@@ -100,7 +110,7 @@ alias pods="kubectl get pods"
 alias services="kubectl get services"
 
 function forward () {
-    name=$(kubectl get pods -o name | grep "^pod/$1" | head -1 | cut -b5-)
+    name=$(kubectl get pods -o name | grep "^pods/$1" | head -1 | cut -b6-)
     if [ -z "$name" ]; then
         echo "not found $1" 1>&2
         return 1
@@ -116,7 +126,7 @@ function forward () {
 }
 
 function logs() {
-    name=$(kubectl get pods -o name | grep "^pod/$1" | head -1 | cut -b5-)
+    name=$(kubectl get pods -o name | grep "^pods/$1" | head -1 | cut -b6-)
     if [ -z "$name" ]; then
         echo "not found $1" 1>&2
         return 1
@@ -126,12 +136,7 @@ function logs() {
     kubectl logs $name $@
 }
 
-# Completion
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
-
 # Local settings
-if [ -f ~/.bashrc_private ]; then
-    . ~/.bashrc_private
+if [[ -e ~/.zshrc_private ]]; then
+    source ~/.zshrc_private
 fi
