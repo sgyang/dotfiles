@@ -4,13 +4,16 @@
     "editor.fontSize": 14,
     "editor.tabSize": 4,
     "editor.minimap.enabled": false,
+    "editor.fontFamily": "'Noto Sans Mono CJK JP Regular', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
     "workbench.statusBar.visible": true,
     "workbench.iconTheme": "vs-seti",
     "workbench.activityBar.visible": false,
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
-    "editor.fontFamily": "'Noto Sans Mono CJK JP Regular', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "extensions.autoUpdate": true,
+    "explorer.confirmDragAndDrop": false,
 
     "go.lintOnSave": "off",
     "go.enableCodeLens": {
@@ -22,21 +25,21 @@
         "-printfuncs",
         "Debugf,Infof,Warnf,Errorf,Fatalf,Panicf"
     ],
+
     "python.pythonPath": "${env.HOME}/.virtualenvs/env/bin/python3",
     "python.autoComplete.extraPaths": [
         "${env.HOME}/.virtualenvs/env/lib/python3.4"
     ],
     "python.linting.enabled": false,
+    "python.linting.enabledWithoutWorkspace": false,
+
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.markEditorSelection": false,
     "markdown.preview.scrollPreviewWithEditorSelection": false,
-    "extensions.autoUpdate": true,
-    "workbench.startupEditor": "newUntitledFile",
+
     "[javascript]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2
     },
-    "python.linting.enabledWithoutWorkspace": false,
-    "explorer.confirmDragAndDrop": false,
 }
