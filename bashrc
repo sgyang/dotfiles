@@ -88,8 +88,8 @@ alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
 # Google Cloud
 if [[ -e $HOME/local/google-cloud-sdk ]]; then
     export CLOUDSDK_PYTHON=/usr/bin/python
-    source $HOME/local/google-cloud-sdk/path.zsh.inc
-    source $HOME/local/google-cloud-sdk/completion.zsh.inc
+    source $HOME/local/google-cloud-sdk/path.bash.inc
+    source $HOME/local/google-cloud-sdk/completion.bash.inc
 fi
 
 # Protobuf
