@@ -25,11 +25,7 @@
         "-printfuncs",
         "Debugf,Infof,Warnf,Errorf,Fatalf,Panicf"
     ],
-
-    "python.pythonPath": "${env.HOME}/.virtualenvs/env/bin/python3",
-    "python.autoComplete.extraPaths": [
-        "${env.HOME}/.virtualenvs/env/lib/python3.5"
-    ],
+    "python.venvPath": "~/.virtualenvs",
     "python.linting.enabled": false,
     "python.linting.enabledWithoutWorkspace": false,
 
