@@ -2,6 +2,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 plugins=(
     autojump
+    dotenv
     git
     tmux
 )
@@ -18,8 +19,10 @@ ZSH_THEME_GIT_PROMPT_SUFFIX="]%{$reset_color%}"
 ZSH_THEME_GIT_PROMPT_DIRTY=" %{$fg[red]%}*%{$fg[green]%}"
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 
+unsetopt autocd
+
 # Common environment variables
-export PATH=$HOME/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LESS="FRSX"
@@ -41,8 +44,8 @@ alias goins='go install -v $(go list ./... 2> /dev/null | grep -v /vendor/ | gre
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Python
-if [[ -e /usr/local/bin/virtualenvwrapper.sh ]]; then
-    source /usr/local/bin/virtualenvwrapper.sh
+if [[ -e "$HOME/.local/bin/virtualenvwrapper.sh" ]]; then
+    source "$HOME/.local/bin/virtualenvwrapper.sh"
 fi
 
 # Java

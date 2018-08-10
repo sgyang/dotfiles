@@ -38,4 +38,11 @@
         "editor.insertSpaces": true,
         "editor.tabSize": 2
     },
+
+    "files.associations": {
+        "*.proto": "proto3"
+    },
+    "extensions.ignoreRecommendations": true,
+    "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+    "typescript.format.insertSpaceAfterSemicolonInForStatements": false
 }
