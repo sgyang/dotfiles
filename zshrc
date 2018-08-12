@@ -21,6 +21,14 @@ ZSH_THEME_GIT_PROMPT_CLEAN=""
 
 unsetopt autocd
 
+function register_id_rsa () {
+    if [[ -z "$1" ]]; then
+        echo "usage: $0 [host]"
+        return 1
+    fi
+    cat ~/.ssh/id_rsa.pub | ssh $1 "cat - > /tmp/hoge && mkdir -p ~/.ssh && cat /tmp/hoge >> ~/.ssh/authorized_keys && chmod 700 ~/.ssh && chmod 600 ~/.ssh/authorized_keys"
+}
+
 # Common environment variables
 export PATH=$HOME/.local/bin:$HOME/bin:$PATH
 export LANG="en_US.UTF-8"
