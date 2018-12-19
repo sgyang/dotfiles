@@ -36,11 +36,19 @@ export LC_ALL="en_US.UTF-8"
 export LESS="FRSX"
 export EDITOR="emacs"
 export LD_LIBRARY_PATH="/usr/local/cuda/lib64"
+export LSCOLORS=Exfxcxdxbxegedabagacad
 
 # Common aliases
 alias emacs='emacs -nw'
 alias ec='emacsclient'
-alias ls='ls --color --group-directories-first'
+
+case "$(uname -s)" in
+    Darwin)
+        ;;
+    *)
+        alias ls='ls --color --group-directories-first'
+        ;;
+esac
 
 # Go
 export GOPATH=$HOME/go
