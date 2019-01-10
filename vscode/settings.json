@@ -1,9 +1,7 @@
 // Place your settings in this file to overwrite the default settings
 {
     "files.trimTrailingWhitespace": true,
-    "editor.fontSize": 14,
     "editor.tabSize": 4,
-    "editor.minimap.enabled": false,
     "editor.fontFamily": "'Noto Sans Mono CJK JP Regular', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
@@ -26,13 +24,12 @@
         "Debugf,Infof,Warnf,Errorf,Fatalf,Panicf"
     ],
     "python.venvPath": "~/.virtualenvs",
+    "python.pythonPath": "~/.virtualenvs/env/bin/python",
     "python.linting.enabled": false,
-    "python.linting.enabledWithoutWorkspace": false,
 
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.markEditorSelection": false,
-    "markdown.preview.scrollPreviewWithEditorSelection": false,
 
     "[javascript]": {
         "editor.insertSpaces": true,
@@ -44,5 +41,14 @@
     },
     "extensions.ignoreRecommendations": true,
     "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-    "typescript.format.insertSpaceAfterSemicolonInForStatements": false
+    "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
+    "breadcrumbs.enabled": false,
+    "editor.minimap.enabled": false,
+    "beautify.config": {
+        "indent_size": 2,
+        "indent_char": " ",
+        "css": {
+          "indent_size": 2
+        }
+      }
 }

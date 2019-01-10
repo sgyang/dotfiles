@@ -30,7 +30,7 @@ function register_id_rsa () {
 }
 
 # Common environment variables
-export PATH=$HOME/.local/bin:$HOME/bin:$PATH
+export PATH=$HOME/bin:$HOME/local/bin:$HOME/.local/bin:$PATH
 export LANG="en_US.UTF-8"
 export LC_ALL="en_US.UTF-8"
 export LESS="FRSX"
