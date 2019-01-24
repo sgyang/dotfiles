@@ -65,7 +65,7 @@ if [[ -e "$HOME/.local/bin/virtualenvwrapper.sh" ]]; then
 fi
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-8-oracle
+export JAVA_HOME=/usr/lib/jvm/java-10-openjdk
 
 # Docker
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"

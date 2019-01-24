@@ -2,7 +2,7 @@
 {
     "files.trimTrailingWhitespace": true,
     "editor.tabSize": 4,
-    "editor.fontFamily": "'Noto Sans Mono CJK JP Regular', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
     "workbench.statusBar.visible": true,
@@ -12,7 +12,6 @@
     "window.zoomLevel": 0,
     "extensions.autoUpdate": true,
     "explorer.confirmDragAndDrop": false,
-
     "go.lintOnSave": "off",
     "go.enableCodeLens": {
         "references": false,
@@ -26,16 +25,13 @@
     "python.venvPath": "~/.virtualenvs",
     "python.pythonPath": "~/.virtualenvs/env/bin/python",
     "python.linting.enabled": false,
-
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
     "markdown.preview.markEditorSelection": false,
-
     "[javascript]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2
     },
-
     "files.associations": {
         "*.proto": "proto3"
     },
@@ -48,7 +44,7 @@
         "indent_size": 2,
         "indent_char": " ",
         "css": {
-          "indent_size": 2
+            "indent_size": 2
         }
-      }
+    }
 }
