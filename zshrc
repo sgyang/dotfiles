@@ -73,10 +73,10 @@ alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"
 alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
 
 # Google Cloud
-if [[ -e $HOME/local/google-cloud-sdk ]]; then
+if [[ -e $HOME/.local/google-cloud-sdk ]]; then
     export CLOUDSDK_PYTHON=/usr/bin/python2.7
-    source $HOME/local/google-cloud-sdk/path.zsh.inc
-    source $HOME/local/google-cloud-sdk/completion.zsh.inc
+    source $HOME/.local/google-cloud-sdk/path.zsh.inc
+    source $HOME/.local/google-cloud-sdk/completion.zsh.inc
 fi
 
 # Protobuf

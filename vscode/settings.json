@@ -23,7 +23,7 @@
         "Debugf,Infof,Warnf,Errorf,Fatalf,Panicf"
     ],
     "python.venvPath": "~/.virtualenvs",
-    "python.pythonPath": "~/.virtualenvs/env/bin/python",
+    "python.pythonPath": "/usr/bin/python",
     "python.linting.enabled": false,
     "markdown.preview.scrollEditorWithPreview": false,
     "markdown.preview.doubleClickToSwitchToEditor": false,
@@ -34,6 +34,11 @@
     },
     "files.associations": {
         "*.proto": "proto3"
+    },
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true
     },
     "extensions.ignoreRecommendations": true,
     "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
