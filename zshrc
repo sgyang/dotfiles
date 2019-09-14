@@ -60,7 +60,9 @@ alias goins='go install -v $(go list ./... 2> /dev/null | grep -v /vendor/ | gre
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Python
-if [[ -e "$HOME/.local/bin/virtualenvwrapper.sh" ]]; then
+if [[ -e "/usr/bin/virtualenvwrapper.sh" ]]; then
+    source "/usr/bin/virtualenvwrapper.sh"
+elif [[ -e "$HOME/.local/bin/virtualenvwrapper.sh" ]]; then
     source "$HOME/.local/bin/virtualenvwrapper.sh"
 fi
 
