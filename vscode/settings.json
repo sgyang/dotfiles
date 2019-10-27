@@ -32,6 +32,11 @@
         "editor.insertSpaces": true,
         "editor.tabSize": 2
     },
+    "[html]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2
+    },
+
     "files.associations": {
         "*.proto": "proto3"
     },
@@ -43,13 +48,21 @@
     "extensions.ignoreRecommendations": true,
     "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
     "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
-    "breadcrumbs.enabled": false,
-    "editor.minimap.enabled": false,
-    "beautify.config": {
-        "indent_size": 2,
-        "indent_char": " ",
-        "css": {
-            "indent_size": 2
+    "diffEditor.ignoreTrimWhitespace": false,
+    "sshfs.configs": [
+        {
+            "host": "192.168.1.60",
+            "name": "orval@192.168.1.60",
+            "privateKeyPath": "/home/sgyang/.ssh/id_rsa",
+            "root": "/home/sgyang",
+            "username": "sgyang"
+        },
+        {
+            "host": "192.168.1.60",
+            "name": "scraper",
+            "privateKeyPath": "/home/sgyang/.ssh/id_rsa",
+            "root": "/home/sgyang/go/src/git.amazinglab.net/spice/scraper"
         }
-    }
+    ],
+    "python.jediEnabled": false
 }
