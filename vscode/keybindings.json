@@ -33,7 +33,6 @@
         "key": "ctrl+alt+n",
         "command": "workbench.action.files.newUntitledFile"
     },
-
     // Copy from https://github.com/nana4gonta/emacs-visual-studio-code
     {
         "key": "ctrl+x s",
@@ -375,5 +374,40 @@
         "key": "ctrl+x u",
         "command": "undo",
         "when": "editorTextFocus"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+shift+b",
+        "command": "-workbench.action.tasks.build"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "-editor.action.insertCursorAbove",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "-editor.action.insertCursorBelow",
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+alt+down",
+        "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "shift+alt+up",
+        "command": "workbench.action.terminal.focusPrevious"
     }
 ]

@@ -1,5 +1,6 @@
 // Place your settings in this file to overwrite the default settings
 {
+    // General
     "files.trimTrailingWhitespace": true,
     "editor.tabSize": 4,
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
@@ -11,31 +12,10 @@
     "window.menuBarVisibility": "toggle",
     "window.zoomLevel": 0,
     "extensions.autoUpdate": true,
+    "extensions.ignoreRecommendations": true,
     "explorer.confirmDragAndDrop": false,
-    "go.lintOnSave": "off",
-    "go.enableCodeLens": {
-        "references": false,
-        "runtest": false
-    },
-    "go.autocompleteUnimportedPackages": true,
-    "go.vetFlags": [
-        "-printfuncs",
-        "Debugf,Infof,Warnf,Errorf,Fatalf,Panicf"
-    ],
-    "python.venvPath": "~/.virtualenvs",
-    "python.pythonPath": "/usr/bin/python",
-    "python.linting.enabled": false,
-    "markdown.preview.scrollEditorWithPreview": false,
-    "markdown.preview.doubleClickToSwitchToEditor": false,
-    "markdown.preview.markEditorSelection": false,
-    "[javascript]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2
-    },
-    "[html]": {
-        "editor.insertSpaces": true,
-        "editor.tabSize": 2
-    },
+    "editor.minimap.enabled": true,
+    "breadcrumbs.enabled": false,
 
     "files.associations": {
         "*.proto": "proto3"
@@ -45,24 +25,61 @@
         "**/.git/subtree-cache/**": true,
         "**/node_modules/*/**": true
     },
-    "extensions.ignoreRecommendations": true,
-    "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
-    "typescript.format.insertSpaceAfterSemicolonInForStatements": false,
-    "diffEditor.ignoreTrimWhitespace": false,
-    "sshfs.configs": [
-        {
-            "host": "192.168.1.60",
-            "name": "orval@192.168.1.60",
-            "privateKeyPath": "/home/sgyang/.ssh/id_rsa",
-            "root": "/home/sgyang",
-            "username": "sgyang"
-        },
-        {
-            "host": "192.168.1.60",
-            "name": "scraper",
-            "privateKeyPath": "/home/sgyang/.ssh/id_rsa",
-            "root": "/home/sgyang/go/src/git.amazinglab.net/spice/scraper"
-        }
+
+    // Markdown
+    "markdown.preview.scrollEditorWithPreview": false,
+    "markdown.preview.doubleClickToSwitchToEditor": false,
+    "markdown.preview.markEditorSelection": false,
+
+    // Go
+    // https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+    "go.lintOnSave": "off",
+    "go.autocompleteUnimportedPackages": true,
+    "go.enableCodeLens": {
+        "references": false,
+        "runtest": false
+    },
+    "go.vetOnSave": "off",
+    "go.vetFlags": [
+        "-printfuncs",
+        "Debugf,Infof,Warnf,Errorf,Fatalf,Panicf"
     ],
-    "python.jediEnabled": false
+    "go.formatTool": "goimports",
+    "go.useLanguageServer": true,
+    "go.languageServerExperimentalFeatures": {
+        "documentLink": false,
+        "format": true,
+        "autoComplete": true
+    },
+    "gopls": {
+        "usePlaceholders": false,
+        "completeUnimported": true,
+    },
+    "[go]": {
+        "editor.snippetSuggestions": "none",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    },
+
+    // Python
+    "python.venvPath": "~/.virtualenvs",
+    "python.pythonPath": "/usr/bin/python",
+    "python.linting.enabled": false,
+
+    // JavaScript
+    "[javascript]": {
+        "editor.insertSpaces": true,
+        "editor.tabSize": 2,
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
+
+    "[html]": {
+        "editor.defaultFormatter": "lonefy.vscode-JS-CSS-HTML-formatter"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    }
 }

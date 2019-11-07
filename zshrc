@@ -64,6 +64,9 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/shims:$PATH"
 export VIRTUALENVWRAPPER_PYTHON="$PYENV_ROOT/shims/python"
 
+# Node.js
+export PATH=$HOME/.yarn/bin:$PATH
+
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-10-openjdk
 
