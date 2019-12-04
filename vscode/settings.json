@@ -72,7 +72,8 @@
     "[javascript]": {
         "editor.insertSpaces": true,
         "editor.tabSize": 2,
-        "editor.defaultFormatter": "vscode.typescript-language-features"
+        "editor.defaultFormatter": "vscode.typescript-language-features",
+        "editor.foldingStrategy": "indentation"
     },
     "javascript.format.insertSpaceAfterSemicolonInForStatements": false,
 
@@ -81,5 +82,6 @@
     },
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
-    }
+    },
+    "javascript.updateImportsOnFileMove.enabled": "never"
 }

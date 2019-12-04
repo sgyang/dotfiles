@@ -1,3 +1,7 @@
+
+# autojump
+[[ -s $HOME/.autojump/etc/profile.d/autojump.sh ]] && source $HOME/.autojump/etc/profile.d/autojump.sh
+
 export ZSH=$HOME/.oh-my-zsh
 
 plugins=(
@@ -60,15 +64,19 @@ alias goins='go install -v $(go list ./... 2> /dev/null | grep -v /vendor/ | gre
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Python
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PATH"
-export VIRTUALENVWRAPPER_PYTHON="$PYENV_ROOT/shims/python"
+export PYENV_ROOT=$HOME/.pyenv
+if type pyenv > /dev/null; then
+    eval "$(pyenv init -)"
+fi
+if [[ -e $HOME/.pyenv/plugins/pyenv-virtualenv ]]; then
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 # Node.js
 export PATH=$HOME/.yarn/bin:$PATH
 
 # Java
-export JAVA_HOME=/usr/lib/jvm/java-10-openjdk
+export JAVA_HOME=/usr/lib/jvm/default
 
 # Docker
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
