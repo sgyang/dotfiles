@@ -64,6 +64,8 @@ alias goins='go install -v $(go list ./... 2> /dev/null | grep -v /vendor/ | gre
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Python
+# git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+# git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 if type pyenv > /dev/null; then
