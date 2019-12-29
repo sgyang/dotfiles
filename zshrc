@@ -65,10 +65,11 @@ export PATH=$HOME/.cargo/bin:$PATH
 
 # Python
 export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
 if type pyenv > /dev/null; then
     eval "$(pyenv init -)"
 fi
-if [[ -e $HOME/.pyenv/plugins/pyenv-virtualenv ]]; then
+if [[ -e $PYENV_ROOT/plugins/pyenv-virtualenv ]]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
