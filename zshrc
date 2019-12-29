@@ -75,6 +75,16 @@ if [[ -e $PYENV_ROOT/plugins/pyenv-virtualenv ]]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 
+function init_python_env () {
+    if [[ ! -e $PYENV_ROOT ]]; then
+        git clone https://github.com/pyenv/pyenv.git $PYENV_ROOT
+    fi
+    if [[ ! -e $PYENV_ROOT/plugins/pyenv-virtualenv ]]; then
+        git clone https://github.com/pyenv/pyenv-virtualenv.git $PYENV_ROOT/plugins/pyenv-virtualenv
+    fi
+    source $HOME/.zshrc
+}
+
 # Node.js
 export PATH=$HOME/.yarn/bin:$PATH
 
