@@ -1,4 +1,5 @@
 .env
+.python-version
 tmp/**
 hoge.*
 .vscode/settings.json
