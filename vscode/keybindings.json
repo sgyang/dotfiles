@@ -33,6 +33,11 @@
         "key": "ctrl+alt+n",
         "command": "workbench.action.files.newUntitledFile"
     },
+    {
+        "key": "ctrl+shift+b",
+        "command": "workbench.action.tasks.runTask"
+    },
+
     // Copy from https://github.com/nana4gonta/emacs-visual-studio-code
     {
         "key": "ctrl+x s",
@@ -376,16 +381,8 @@
         "when": "editorTextFocus"
     },
     {
-        "key": "ctrl+shift+b",
-        "command": "workbench.action.toggleSidebarVisibility"
-    },
-    {
         "key": "ctrl+b",
         "command": "-workbench.action.toggleSidebarVisibility"
-    },
-    {
-        "key": "ctrl+shift+b",
-        "command": "-workbench.action.tasks.build"
     },
     {
         "key": "shift+alt+down",
