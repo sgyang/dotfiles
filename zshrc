@@ -91,6 +91,9 @@ export PATH=$HOME/.yarn/bin:$PATH
 # Java
 export JAVA_HOME=/usr/lib/jvm/default
 
+# Ruby
+export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
+
 # Docker
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"

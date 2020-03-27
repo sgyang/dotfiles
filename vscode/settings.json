@@ -2,7 +2,6 @@
 {
     // General
     "files.trimTrailingWhitespace": true,
-    "editor.tabSize": 4,
     "editor.fontFamily": "'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editor.enablePreview": false,
@@ -14,7 +13,7 @@
     "extensions.autoUpdate": true,
     "extensions.ignoreRecommendations": true,
     "explorer.confirmDragAndDrop": false,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "breadcrumbs.enabled": false,
 
     "files.associations": {
@@ -83,5 +82,10 @@
     "[json]": {
         "editor.defaultFormatter": "vscode.json-language-features"
     },
-    "javascript.updateImportsOnFileMove.enabled": "never"
+    "javascript.updateImportsOnFileMove.enabled": "never",
+    "[xml]": {
+        "editor.defaultFormatter": "DotJoshJohnson.xml",
+        "editor.tabSize": 2
+    },
+    "browser-preview.chromeExecutable": "/usr/bin/google-chrome-stable"
 }
