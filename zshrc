@@ -86,6 +86,9 @@ function init_python_env () {
 }
 
 # Node.js
+if [[ -e /usr/share/nvm/init-nvm.sh ]]; then
+    source /usr/share/nvm/init-nvm.sh
+fi
 export PATH=$HOME/.yarn/bin:$PATH
 
 # Java
