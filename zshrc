@@ -143,14 +143,7 @@ function forward () {
 }
 
 function logs() {
-    name=$(kubectl get pods -o name | grep "^pods/$1" | head -1 | cut -b6-)
-    if [ -z "$name" ]; then
-        echo "not found $1" 1>&2
-        return 1
-    fi
-    echo $name 1>&2
-    shift
-    kubectl logs $name $@
+    ku logs --all-containers=true -f "deployment/$1"
 }
 
 # Local settings
