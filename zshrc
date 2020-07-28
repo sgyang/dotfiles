@@ -74,6 +74,7 @@ fi
 if [[ -e $PYENV_ROOT/plugins/pyenv-virtualenv ]]; then
     eval "$(pyenv virtualenv-init -)"
 fi
+export PIPENV_VENV_IN_PROJECT=true
 
 function init_python_env () {
     if [[ ! -e $PYENV_ROOT ]]; then
