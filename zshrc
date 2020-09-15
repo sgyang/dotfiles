@@ -63,7 +63,7 @@ alias goins='go install -v $(go list ./... 2> /dev/null | grep -v /vendor/ | gre
 # Rust
 export PATH=$HOME/.cargo/bin:$PATH
 
-# Python
+# Python: pyenv + pipenv
 # git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 # git clone https://github.com/pyenv/pyenv-virtualenv.git ~/.pyenv/plugins/pyenv-virtualenv
 export PYENV_ROOT=$HOME/.pyenv
@@ -75,6 +75,7 @@ if [[ -e $PYENV_ROOT/plugins/pyenv-virtualenv ]]; then
     eval "$(pyenv virtualenv-init -)"
 fi
 export PIPENV_VENV_IN_PROJECT=true
+export PIPENV_SKIP_LOCK=true # Locking is super slow
 
 function init_python_env () {
     if [[ ! -e $PYENV_ROOT ]]; then
@@ -95,9 +96,6 @@ export PATH=$HOME/.yarn/bin:$PATH
 # Java
 export JAVA_HOME=/usr/lib/jvm/default
 
-# Ruby
-export PATH=$HOME/.gem/ruby/2.7.0/bin:$PATH
-
 # Docker
 alias docker-ip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 alias docker-rm="docker rm -v \$(docker ps -a -q --filter status=exited)"
@@ -105,47 +103,16 @@ alias docker-rmi="docker rmi \$(docker images -q --filter dangling=true)"
 
 # Google Cloud
 if [[ -e $HOME/.local/google-cloud-sdk ]]; then
-    export CLOUDSDK_PYTHON=/usr/bin/python2.7
+    #export CLOUDSDK_PYTHON=/usr/bin/python2.7
     source $HOME/.local/google-cloud-sdk/path.zsh.inc
     source $HOME/.local/google-cloud-sdk/completion.zsh.inc
 fi
-
-# Protobuf
-function protocw () {
-    set -x
-    protoc -I. \
-         -I$GOPATH/src \
-         -I$GOPATH/src/github.com/grpc-ecosystem/grpc-gateway/third_party/googleapis/ \
-         --go_out=plugins=grpc:$GOPATH/src \
-         --grpc-gateway_out=. \
-         $@
-}
 
 # Kubernetes
 alias ku="kubectl"
 alias deploys="kubectl get deployments"
 alias pods="kubectl get pods"
 alias services="kubectl get services"
-
-function forward () {
-    name=$(kubectl get pods -o name | grep "^pods/$1" | head -1 | cut -b6-)
-    if [ -z "$name" ]; then
-        echo "not found $1" 1>&2
-        return 1
-    fi
-    echo $name 1>&2
-    shift
-    port=30000
-    if [ ! -z "$1" ]; then
-        port=$1
-        shift
-    fi
-    kubectl port-forward $name $port $@
-}
-
-function logs() {
-    ku logs --all-containers=true -f "deployment/$1"
-}
 
 # Local settings
 if [[ -e ~/.zshrc_private ]]; then
