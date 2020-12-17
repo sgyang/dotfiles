@@ -114,6 +114,10 @@ alias deploys="kubectl get deployments"
 alias pods="kubectl get pods"
 alias services="kubectl get services"
 
+# Dart and Flutter (snap)
+export PATH=$HOME/snap/flutter/common/flutter/bin:$PATH
+export PATH=$HOME/.pub-cache/bin:$PATH
+
 # Local settings
 if [[ -e ~/.zshrc_private ]]; then
     source ~/.zshrc_private
