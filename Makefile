@@ -1,15 +1,11 @@
 
-DOTFILES = $(filter-out Makefile scripts vscode fonts.conf, $(shell ls))
+DOTFILES = $(filter-out Makefile scripts fonts.conf, $(shell ls))
 
 .PHONY: all
-all: dotfiles vscode install-fonts.conf
+all: dotfiles install-fonts.conf
 
 .PHONY: dotfiles
 dotfiles: $(foreach f, $(DOTFILES), install-dotfile-$(f))
-
-.PHONY: vscode
-vscode:
-	cd ./vscode; make
 
 install-fonts.conf:
 	mkdir -p $(HOME)/.config/fontconfig
