@@ -2,3 +2,4 @@
 .python-version
 tmp/**
 hoge.*
+.venv
