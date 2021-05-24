@@ -117,6 +117,10 @@ alias services="kubectl get services"
 export PATH=$HOME/snap/flutter/common/flutter/bin:$PATH
 export PATH=$HOME/.pub-cache/bin:$PATH
 
+# Fix vscode
+# See: https://jamezrin.name/fix-visual-studio-code-freezing-when-deleting
+export ELECTRON_TRASH=gio
+
 # Local settings
 if [[ -e ~/.zshrc_private ]]; then
     source ~/.zshrc_private
