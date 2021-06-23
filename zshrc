@@ -68,7 +68,7 @@ export PATH=$HOME/.cargo/bin:$PATH
 export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 if type pyenv > /dev/null; then
-    eval "$(pyenv init -)"
+    eval "$(pyenv init --path)"
 fi
 if [[ -e $PYENV_ROOT/plugins/pyenv-virtualenv ]]; then
     eval "$(pyenv virtualenv-init -)"
