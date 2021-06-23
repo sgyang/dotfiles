@@ -121,6 +121,10 @@ export PATH=$HOME/.pub-cache/bin:$PATH
 # See: https://jamezrin.name/fix-visual-studio-code-freezing-when-deleting
 export ELECTRON_TRASH=gio
 
+
+alias pretty_csv="column -t -s ','"
+alias pretty_tsv="column -t -s $'\t'"
+
 # Local settings
 if [[ -e ~/.zshrc_private ]]; then
     source ~/.zshrc_private
